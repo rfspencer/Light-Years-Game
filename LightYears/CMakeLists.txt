@@ -1,5 +1,11 @@
 add_executable(${LIGHT_YEARS_GAME_TARGET_NAME}
         src/main.cpp
+        src/framework/Application.cpp
+        include/framework/Application.h
+)
+
+target_include_directories(${LIGHT_YEARS_GAME_TARGET_NAME} PUBLIC
+    include/
 )
 
 target_link_libraries(${LIGHT_YEARS_GAME_TARGET_NAME} PUBLIC sfml-graphics)
