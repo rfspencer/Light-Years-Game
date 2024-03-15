@@ -1,8 +1,12 @@
 add_library(${LIGHT_YEARS_ENGINE_TARGET_NAME} STATIC
         src/framework/Application.cpp
         include/framework/Application.h
+
         src/EntryPoint.cpp
         include/EntryPoint.h
+
+        src/framework/Core.cpp
+        include/framework/Core.h
 )
 
 target_include_directories(${LIGHT_YEARS_ENGINE_TARGET_NAME} PUBLIC

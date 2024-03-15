@@ -1,6 +1,5 @@
-#include <iostream>
-
 #include "framework/Application.h"
+#include "framework/Core.h"
 
 namespace ly
 {
@@ -29,13 +28,15 @@ namespace ly
                 }
             }
 
-            accumulatedTime += mTickClock.restart().asSeconds();
+            float frameDeltaTime = mTickClock.restart().asSeconds();
+            accumulatedTime += frameDeltaTime;
             while(accumulatedTime > targetDeltaTime)
             {
                 accumulatedTime -= targetDeltaTime;
                 TickInternal(targetDeltaTime);
                 RenderInternal();
             }
+            LY_LOG("ticking at framerate: %f", 1.f / frameDeltaTime);
         }
     }
 
@@ -65,6 +66,6 @@ namespace ly
 
     void Application::Tick(float deltaTime)
     {
-        std::cout << "ticking at framerate: " << 1.f / deltaTime << std::endl;
+
     }
 }
