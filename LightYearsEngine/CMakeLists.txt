@@ -13,6 +13,9 @@ add_library(${LIGHT_YEARS_ENGINE_TARGET_NAME} STATIC
 
         include/framework/Actor.h
         src/framework/Actor.cpp
+
+        include/framework/Object.h
+        src/framework/Object.cpp
 )
 
 target_include_directories(${LIGHT_YEARS_ENGINE_TARGET_NAME} PUBLIC
