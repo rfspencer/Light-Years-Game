@@ -3,13 +3,12 @@
 
 namespace ly
 {
-    Application::Application()
-        : mWindow(sf::VideoMode(600, 800), "Light Years"),
-        mTargetFrameRate{60.f},
-        mTickClock{},
-        currentWorld{nullptr}
+    Application::Application(unsigned int windowWidth, unsigned int windowHeight, const std::string &title, sf::Uint32 style)
+            : mWindow(sf::VideoMode(windowWidth, windowHeight), title, style),
+              mTargetFrameRate{60.f},
+              mTickClock{},
+              currentWorld{nullptr}
     {
-
     }
 
     void Application::Run()
@@ -61,12 +60,7 @@ namespace ly
 
     void Application::Render()
     {
-        sf::RectangleShape rect{sf::Vector2f{100.f, 100.f}};
-        rect.setFillColor(sf::Color::Green);
-        rect.setOrigin(50.f, 50.f);
-        rect.setPosition(mWindow.getSize().x / 2.f, mWindow.getSize().y / 2.f);
-        
-        mWindow.draw(rect);
+        currentWorld->Render(mWindow);
     }
 
     void Application::Tick(float deltaTime)
