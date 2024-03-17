@@ -7,6 +7,9 @@ add_library(${LIGHT_YEARS_ENGINE_TARGET_NAME} STATIC
 
         src/framework/Core.cpp
         include/framework/Core.h
+
+        include/framework/World.h
+        src/framework/World.cpp
 )
 
 target_include_directories(${LIGHT_YEARS_ENGINE_TARGET_NAME} PUBLIC
