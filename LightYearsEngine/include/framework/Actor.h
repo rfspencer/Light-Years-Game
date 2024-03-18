@@ -29,6 +29,6 @@ namespace ly
         bool mHasBeganPlay;
 
         sf::Sprite mSprite;
-        sf::Texture mTexture;
+        shared<sf::Texture> mTexture;
     };
 }

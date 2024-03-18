@@ -16,6 +16,9 @@ add_library(${LIGHT_YEARS_ENGINE_TARGET_NAME} STATIC
 
         include/framework/Object.h
         src/framework/Object.cpp
+
+        src/framework/AssetManager.cpp
+        include/framework/AssetManager.h
 )
 
 target_include_directories(${LIGHT_YEARS_ENGINE_TARGET_NAME} PUBLIC
