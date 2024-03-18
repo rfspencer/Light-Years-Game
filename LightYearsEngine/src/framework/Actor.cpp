@@ -37,12 +37,10 @@ namespace ly
 
     void Actor::BeginPlay()
     {
-        LY_LOG("Actor begin play.");
     }
 
     void Actor::Tick(float deltaTime)
     {
-        LY_LOG("Actor ticking...");
     }
 
     void Actor::SetTexture(const std::string &texturePath)
