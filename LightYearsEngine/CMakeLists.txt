@@ -19,6 +19,9 @@ add_library(${LIGHT_YEARS_ENGINE_TARGET_NAME} STATIC
 
         src/framework/AssetManager.cpp
         include/framework/AssetManager.h
+
+        include/framework/MathUtility.h
+        src/framework/MathUtility.cpp
 )
 
 target_include_directories(${LIGHT_YEARS_ENGINE_TARGET_NAME} PUBLIC
