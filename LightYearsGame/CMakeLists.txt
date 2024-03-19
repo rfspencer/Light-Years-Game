@@ -5,8 +5,8 @@ add_executable(${LIGHT_YEARS_GAME_TARGET_NAME}
         src/spaceship/SpaceShip.cpp
         include/spaceship/SpaceShip.h
 
-        src/player/PlayerSpaceship.cpp
-        include/player/PlayerSpaceship.h
+        src/player/PlayerSpaceShip.cpp
+        include/player/PlayerSpaceShip.h
 )
 
 target_include_directories(${LIGHT_YEARS_GAME_TARGET_NAME} PUBLIC
