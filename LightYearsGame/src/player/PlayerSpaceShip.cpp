@@ -8,7 +8,8 @@ namespace ly
     PlayerSpaceShip::PlayerSpaceShip(World *owningWorld, const std::string &texturePath)
         : SpaceShip(owningWorld, texturePath),
         mMoveInput(),
-        mSpeed(200.f)
+        mSpeed(200.f),
+        mShooter{new BulletShooter{this, 0.3f}}
     {
 
     }
@@ -43,6 +44,11 @@ namespace ly
 
         ClampInputOnEdge();
         NormalizeInput();
+
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+        {
+            Shoot();
+        }
     }
 
     void PlayerSpaceShip::ConsumeInput(float deltaTime)
@@ -74,6 +80,14 @@ namespace ly
         if(actorLocation.y > GetWindowSize().y && mMoveInput.y == 1.f)
         {
             mMoveInput.y = 0.f;
+        }
+    }
+
+    void PlayerSpaceShip::Shoot()
+    {
+        if (mShooter)
+        {
+            mShooter->Shoot();
         }
     }
 }

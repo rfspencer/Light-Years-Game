@@ -7,6 +7,12 @@ add_executable(${LIGHT_YEARS_GAME_TARGET_NAME}
 
         src/player/PlayerSpaceShip.cpp
         include/player/PlayerSpaceShip.h
+
+        src/weapon/Shooter.cpp
+        include/weapon/Shooter.h
+
+        src/weapon/BulletShooter.cpp
+        include/weapon/BulletShooter.h
 )
 
 target_include_directories(${LIGHT_YEARS_GAME_TARGET_NAME} PUBLIC
