@@ -13,6 +13,9 @@ add_executable(${LIGHT_YEARS_GAME_TARGET_NAME}
 
         src/weapon/BulletShooter.cpp
         include/weapon/BulletShooter.h
+
+        src/weapon/Bullet.cpp
+        include/weapon/Bullet.h
 )
 
 target_include_directories(${LIGHT_YEARS_GAME_TARGET_NAME} PUBLIC
