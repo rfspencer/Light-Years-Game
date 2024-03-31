@@ -54,12 +54,17 @@ namespace ly
         return body;
     }
 
+    void PhysicsSystem::RemoveListener(b2Body *bodyToRemove)
+    {
+        // @TODO: implement removal of physics body
+    }
+
     PhysicsSystem::PhysicsSystem()
         : mPhysicsWorld{b2Vec2{0.f, 0.f}},
         mPhysicsScale{0.01f},
         mVelocityIterations{8},
         mPositionIterations{3}
     {
-
+        
     }
 }

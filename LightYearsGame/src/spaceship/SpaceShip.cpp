@@ -16,6 +16,13 @@ namespace ly
         AddActorLocationOffset(GetVelocity() * deltaTime);
     }
 
+    void SpaceShip::BeginPlay()
+    {
+        Actor::BeginPlay();
+
+        SetEnablePhysics(true);
+    }
+
     void SpaceShip::SetVelocity(const sf::Vector2f &newVelocity)
     {
         mVelocity = newVelocity;

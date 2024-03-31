@@ -22,6 +22,13 @@ namespace ly
         }
     }
 
+    void Bullet::BeginPlay()
+    {
+        Actor::BeginPlay();
+
+        SetEnablePhysics(true);
+    }
+
     void Bullet::SetSpeed(float newSpeed)
     {
         mSpeed = newSpeed;
