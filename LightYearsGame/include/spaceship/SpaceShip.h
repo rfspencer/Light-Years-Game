@@ -20,6 +20,8 @@ namespace ly
         void BeginPlay() override;
 
     private:
+        void OnHealthChanged(float amount, float health, float maxHealth);
+
         sf::Vector2f mVelocity;
         HealthComponent mHealthComponent;
     };

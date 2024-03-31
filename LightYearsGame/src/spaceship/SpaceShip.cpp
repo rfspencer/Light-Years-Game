@@ -22,6 +22,8 @@ namespace ly
         Actor::BeginPlay();
 
         SetEnablePhysics(true);
+
+        mHealthComponent.onHealthChanged.BindAction(GetWeakRef(), &SpaceShip::OnHealthChanged);
     }
 
     void SpaceShip::SetVelocity(const sf::Vector2f &newVelocity)
@@ -30,6 +32,11 @@ namespace ly
     }
 
     void SpaceShip::Shoot()
+    {
+
+    }
+
+    void SpaceShip::OnHealthChanged(float amount, float health, float maxHealth)
     {
 
     }
