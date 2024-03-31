@@ -16,6 +16,9 @@ add_executable(${LIGHT_YEARS_GAME_TARGET_NAME}
 
         src/weapon/Bullet.cpp
         include/weapon/Bullet.h
+
+        src/gameplay/HealthComponent.cpp
+        include/gameplay/HealthComponent.h
 )
 
 target_include_directories(${LIGHT_YEARS_GAME_TARGET_NAME} PUBLIC

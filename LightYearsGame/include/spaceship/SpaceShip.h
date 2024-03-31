@@ -2,6 +2,8 @@
 
 #include "framework/Actor.h"
 
+#include "gameplay/HealthComponent.h"
+
 namespace ly
 {
     class SpaceShip : public Actor
@@ -19,5 +21,6 @@ namespace ly
 
     private:
         sf::Vector2f mVelocity;
+        HealthComponent mHealthComponent;
     };
 }
