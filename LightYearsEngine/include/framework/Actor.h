@@ -45,6 +45,7 @@ namespace ly
         void SetEnablePhysics(bool enable);
         virtual void OnActorBeginOverlap(Actor* otherActor);
         virtual void OnActorEndOverlap(Actor* otherActor);
+        virtual void Destroy() override;
 
     private:
         void InitializePhysics();

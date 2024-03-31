@@ -4,6 +4,7 @@
 #include <memory>
 #include <map>
 #include <unordered_map>
+#include <unordered_set>
 #include <vector>
 
 namespace ly
@@ -25,6 +26,9 @@ namespace ly
 
     template<typename keyType, typename valType, typename hasher = std::hash<keyType>>
     using Dictionary = std::unordered_map<keyType, valType, hasher>;
+
+    template<typename T>
+    using Set = std::unordered_set<T>;
 
 // macro
 #define LY_LOG(M, ...) printf(M "\n", ##__VA_ARGS__)
