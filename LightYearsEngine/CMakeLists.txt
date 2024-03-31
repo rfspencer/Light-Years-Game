@@ -22,6 +22,9 @@ add_library(${LIGHT_YEARS_ENGINE_TARGET_NAME} STATIC
 
         include/framework/MathUtility.h
         src/framework/MathUtility.cpp
+
+        src/framework/PhysicsSystem.cpp
+        include/framework/PhysicsSystem.h
 )
 
 target_include_directories(${LIGHT_YEARS_ENGINE_TARGET_NAME} PUBLIC
