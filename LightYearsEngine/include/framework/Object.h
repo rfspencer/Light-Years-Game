@@ -1,7 +1,8 @@
 #pragma once
 
 #include <memory>
-#include "Core.h"
+#include "framework/Core.h"
+#include "framework/Delegate.h"
 
 namespace ly
 {
@@ -16,6 +17,8 @@ class Object : public std::enable_shared_from_this<Object>
 
         weak<Object> GetWeakRef();
         weak<const Object> GetWeakRef() const;
+
+        Delegate<Object*> onDestroy;
 
     private:
         bool mIsPendingDestroy;

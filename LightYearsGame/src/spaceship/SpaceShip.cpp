@@ -24,6 +24,8 @@ namespace ly
         SetEnablePhysics(true);
 
         mHealthComponent.onHealthChanged.BindAction(GetWeakRef(), &SpaceShip::OnHealthChanged);
+
+        mHealthComponent.onHealthChanged.Broadcast(11, 89, 100);
     }
 
     void SpaceShip::SetVelocity(const sf::Vector2f &newVelocity)
@@ -38,6 +40,6 @@ namespace ly
 
     void SpaceShip::OnHealthChanged(float amount, float health, float maxHealth)
     {
-
+        LY_LOG("Health changed by: %f, and is now: %f/%f", amount, health, maxHealth);
     }
 }
