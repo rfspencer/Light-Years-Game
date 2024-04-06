@@ -24,8 +24,8 @@ namespace ly
         SetEnablePhysics(true);
 
         mHealthComponent.onHealthChanged.BindAction(GetWeakRef(), &SpaceShip::OnHealthChanged);
-
-        mHealthComponent.onHealthChanged.Broadcast(11, 89, 100);
+        mHealthComponent.onTakenDamage.BindAction(GetWeakRef(), &SpaceShip::OnTakenDamage);
+        mHealthComponent.onHealthEmpty.BindAction(GetWeakRef(), &SpaceShip::OnBlowUp);
     }
 
     void SpaceShip::SetVelocity(const sf::Vector2f &newVelocity)
@@ -38,8 +38,23 @@ namespace ly
 
     }
 
+    void SpaceShip::ApplyDamage(float amount)
+    {
+        mHealthComponent.ChangeHealth(-amount);
+    }
+
     void SpaceShip::OnHealthChanged(float amount, float health, float maxHealth)
     {
-        LY_LOG("Health changed by: %f, and is now: %f/%f", amount, health, maxHealth);
+
+    }
+
+    void SpaceShip::OnTakenDamage(float amount, float health, float maxHealth)
+    {
+
+    }
+
+    void SpaceShip::OnBlowUp()
+    {
+        Destroy();
     }
 }

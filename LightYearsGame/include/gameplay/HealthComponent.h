@@ -15,11 +15,12 @@ namespace ly
         float GetMaxHealth() { return mMaxHealth; }
 
         Delegate<float, float, float> onHealthChanged;
+        Delegate<float, float, float> onTakenDamage;
+        Delegate<> onHealthEmpty;
 
     private:
         void TakeDamage(float damageAmount);
         void HealthEmpty();
-        void HealthRegen(float regenAmount);
 
         float mHealth;
         float mMaxHealth;

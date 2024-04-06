@@ -9,7 +9,7 @@ namespace ly
         mSpeed{speed},
         mDamage{damage}
     {
-
+        SetTeamID(owner->GetTeamID());
     }
 
     void Bullet::Tick(float deltaTime)
@@ -43,6 +43,15 @@ namespace ly
     {
         sf::Vector2<float> testRot = GetActorForwardDirection();
         AddActorLocationOffset(GetActorForwardDirection() * mSpeed * deltaTime);
+    }
+
+    void Bullet::OnActorBeginOverlap(Actor *otherActor)
+    {
+        if (IsOtherHostile(otherActor))
+        {
+            otherActor->ApplyDamage(GetDamage());
+            Destroy();
+        }
     }
 
 }
