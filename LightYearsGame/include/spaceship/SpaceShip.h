@@ -21,11 +21,20 @@ namespace ly
         void BeginPlay() override;
 
     private:
+        void Blink();
+
+        void UpdateBlink(float deltaTime);
+
         virtual void OnHealthChanged(float amount, float health, float maxHealth);
         virtual void OnTakenDamage(float amount, float health, float maxHealth);
         virtual void OnBlowUp();
 
         sf::Vector2f mVelocity;
         HealthComponent mHealthComponent;
+
+        float mBlinkTime;
+        float mBlinkDuration;
+        sf::Color mBlinkColorOffset;
+
     };
 }

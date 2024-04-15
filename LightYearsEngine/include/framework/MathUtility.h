@@ -33,4 +33,10 @@ namespace ly
 
         return vector;
     }
+
+    sf::Color LerpColor(const sf::Color& a, const sf::Color& b, float alpha);
+
+    sf::Vector2f LerpVerctor(const sf::Vector2f& a, const sf::Vector2f& b, float alpha);
+
+    float LerpFloat(float a, float b, float alpha);
 }
