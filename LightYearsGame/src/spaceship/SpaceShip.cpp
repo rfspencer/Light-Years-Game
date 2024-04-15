@@ -1,5 +1,6 @@
 #include "spaceship/SpaceShip.h"
 #include "framework/MathUtility.h"
+#include "VFX/Explosion.h"
 
 namespace ly
 {
@@ -79,6 +80,9 @@ namespace ly
 
     void SpaceShip::OnBlowUp()
     {
+        Explosion* exp = new Explosion();
+        exp->SpawnExplosion(GetWorld(), GetActorLocation());
         Destroy();
+        delete exp;
     }
 }

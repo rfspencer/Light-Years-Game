@@ -19,6 +19,9 @@ add_executable(${LIGHT_YEARS_GAME_TARGET_NAME}
 
         src/gameplay/HealthComponent.cpp
         include/gameplay/HealthComponent.h
+
+        src/VFX/Explosion.cpp
+        include/VFX/Explosion.h
 )
 
 target_include_directories(${LIGHT_YEARS_GAME_TARGET_NAME} PUBLIC
