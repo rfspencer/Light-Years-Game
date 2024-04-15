@@ -12,6 +12,8 @@ namespace ly
         GameLevelOne(Application* owningApp);
 
     private:
+        void BeginPlay() override;
+        void TimerCallback_Test();
 
         weak<PlayerSpaceShip> testPlayerSpaceship;
     };

@@ -31,6 +31,9 @@ add_library(${LIGHT_YEARS_ENGINE_TARGET_NAME} STATIC
 
         include/VFX/Particle.h
         src/VFX/Particle.cpp
+
+        src/framework/TimerManager.cpp
+        include/framework/TimerManager.h
 )
 
 target_include_directories(${LIGHT_YEARS_ENGINE_TARGET_NAME} PUBLIC
