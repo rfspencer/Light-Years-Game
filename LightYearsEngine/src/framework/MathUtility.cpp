@@ -1,4 +1,4 @@
-#include <complex>
+#include <random>
 #include "framework/MathUtility.h"
 
 namespace ly
@@ -39,10 +39,30 @@ namespace ly
         return sf::Color(lerpR, lerpG, lerpB, lerpA);
     }
 
-    sf::Vector2f LerpVerctor(const sf::Vector2f& a, const sf::Vector2f& b, float alpha)
+    sf::Vector2f LerpVector(const sf::Vector2f& a, const sf::Vector2f& b, float alpha)
     {
         float lerpX = LerpFloat(a.x, b.x, alpha);
         float lerpY = LerpFloat(a.y, b.y, alpha);
         return sf::Vector2f(lerpX, lerpY);
+    }
+
+    float RandomRange(float min, float max)
+    {
+        std::random_device rd;
+        std::mt19937 gen(rd());
+
+        std::uniform_real_distribution<float> distribution{min, max};
+
+        return distribution(gen);
+    }
+
+    sf::Vector2f RandomUnitVector()
+    {
+        float randomX = RandomRange(-1, 1);
+        float randomY = RandomRange(-1, 1);
+        sf::Vector2f randVec{randomX, randomY};
+        Normalize(randVec);
+
+        return randVec;
     }
 }

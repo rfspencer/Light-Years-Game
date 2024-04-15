@@ -28,6 +28,9 @@ add_library(${LIGHT_YEARS_ENGINE_TARGET_NAME} STATIC
 
         src/framework/Delegate.cpp
         include/framework/Delegate.h
+
+        include/VFX/Particle.h
+        src/VFX/Particle.cpp
 )
 
 target_include_directories(${LIGHT_YEARS_ENGINE_TARGET_NAME} PUBLIC
