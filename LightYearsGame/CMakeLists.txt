@@ -25,8 +25,12 @@ add_executable(${LIGHT_YEARS_GAME_TARGET_NAME}
 
         src/Enemy/EnemySpaceship.cpp
         include/Enemy/EnemySpaceship.h
+
         src/Enemy/Vanguard.cpp
         include/Enemy/Vanguard.h
+
+        src/Level/GameLevelOne.cpp
+        include/Level/GameLevelOne.h
 )
 
 target_include_directories(${LIGHT_YEARS_GAME_TARGET_NAME} PUBLIC
