@@ -22,11 +22,11 @@ namespace ly
 
     void GameLevelOne::BeginPlay()
     {
-        TimerManager::Get().SetTimer(GetWeakRef(), &GameLevelOne::TimerCallback_Test, 10.f);
+        TimerManager::Get().SetTimer(GetWeakRef(), &GameLevelOne::TimerCallback_Test, 2.f, true);
     }
 
     void GameLevelOne::TimerCallback_Test()
     {
-        
+        LY_LOG("Callback called!");
     }
 }
