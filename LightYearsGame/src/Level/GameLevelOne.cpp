@@ -2,7 +2,6 @@
 
 #include "Enemy/Vanguard.h"
 #include "player/PlayerSpaceShip.h"
-#include "framework/TimerManager.h"
 
 
 namespace ly
@@ -22,12 +21,12 @@ namespace ly
 
     void GameLevelOne::BeginPlay()
     {
-        timerIndex_Test = TimerManager::Get().SetTimer(GetWeakRef(), &GameLevelOne::TimerCallback_Test, 2.f, true);
+        timerHandle_Test = TimerManager::Get().SetTimer(GetWeakRef(), &GameLevelOne::TimerCallback_Test, 2.f, true);
     }
 
     void GameLevelOne::TimerCallback_Test()
     {
         LY_LOG("Callback called!");
-        TimerManager::Get().ClearTimer(timerIndex_Test);
+        TimerManager::Get().ClearTimer(timerHandle_Test);
     }
 }
