@@ -1,11 +1,10 @@
 #pragma once
 
 #include "Enemy/EnemySpaceship.h"
+#include "weapon/BulletShooter.h"
 
 namespace ly
 {
-    class BulletShooter;
-
     class TwinBlade : public EnemySpaceship
     {
     public:

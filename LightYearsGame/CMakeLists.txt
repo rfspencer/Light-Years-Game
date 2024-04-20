@@ -37,6 +37,9 @@ add_executable(${LIGHT_YEARS_GAME_TARGET_NAME}
 
         src/Enemy/TwinBlade.cpp
         include/Enemy/TwinBlade.h
+
+        src/Enemy/TwinBladeStage.cpp
+        include/Enemy/TwinBladeStage.h
 )
 
 target_include_directories(${LIGHT_YEARS_GAME_TARGET_NAME} PUBLIC
