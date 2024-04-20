@@ -40,6 +40,8 @@ namespace ly
         return mIsExpired || mListener.first.expired() || mListener.first.lock()->IsPendingDestroy();
     }
 
+    unsigned int TimerManager::timerIndexCounter = 0;
+
     void Timer::SetExpired()
     {
         mIsExpired = true;
@@ -65,9 +67,26 @@ namespace ly
 
     void TimerManager::UpdateTimer(float deltaTime)
     {
-        for(Timer& timer : mTimers)
+        for (auto iter = mTimers.begin(); iter != mTimers.end();)
         {
-            timer.TickTime(deltaTime);
+            if (iter->second.Expired())
+            {
+                iter = mTimers.erase(iter);
+            }
+            else
+            {
+                iter->second.TickTime(deltaTime);
+                ++iter;
+            }
+        }
+    }
+
+    void TimerManager::ClearTimer(unsigned int timerIndex)
+    {
+        auto iter = mTimers.find(timerIndex);
+        if (iter != mTimers.end())
+        {
+            iter->second.SetExpired();
         }
     }
 }

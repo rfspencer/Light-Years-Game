@@ -16,5 +16,6 @@ namespace ly
         void TimerCallback_Test();
 
         weak<PlayerSpaceShip> testPlayerSpaceship;
+        unsigned int timerIndex_Test;
     };
 }
