@@ -43,9 +43,13 @@ namespace ly
         List<shared<Actor>> mPendingActors;
 
         List<shared<GameStage>> mGameStages;
+
+        List<shared<GameStage>>::iterator mCurrentStage;
+
         int mCurrentStageIndex;
         virtual void InitGameStages();
         void NextGameStage();
+        void StartStages();
         virtual void AllGameStagesFinished();
     };
 
