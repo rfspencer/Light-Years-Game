@@ -17,6 +17,8 @@ namespace ly
 
         void Shoot() override;
 
+        void SetShooter(unique<Shooter>&& newShooter);
+
     private:
         void HandleInput();
         void NormalizeInput();

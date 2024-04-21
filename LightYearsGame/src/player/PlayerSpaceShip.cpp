@@ -93,4 +93,9 @@ namespace ly
             mShooter->Shoot();
         }
     }
+
+    void PlayerSpaceShip::SetShooter(unique<Shooter> &&newShooter)
+    {
+        mShooter = std::move(newShooter);
+    }
 }

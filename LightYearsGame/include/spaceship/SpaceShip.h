@@ -20,6 +20,8 @@ namespace ly
 
         void BeginPlay() override;
 
+        HealthComponent& GetHealthComp() { return mHealthComponent; }
+
     private:
         void Blink();
 

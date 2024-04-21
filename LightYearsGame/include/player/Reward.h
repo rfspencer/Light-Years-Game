@@ -22,4 +22,14 @@ namespace ly
         float mSpeed;
         RewardFunction mRewardFunction;
     };
+
+    using RewardFactoryFunction = std::function<weak<Reward>(World*)>;
+    weak<Reward> CreateReward(World* world, const std::string& texturePath, RewardFunction rewardFunction);
+    weak<Reward> CreateHealthReward(World* world);
+    weak<Reward> CreateThreeWayShooterReward(World* world);
+    weak<Reward> CreateFrontWiperReward(World* world);
+
+    void RewardHealth(PlayerSpaceShip* player);
+    void RewardThreeWayShooter(PlayerSpaceShip* player);
+    void RewardFrontWiper(PlayerSpaceShip* player);
 }
