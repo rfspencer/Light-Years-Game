@@ -46,6 +46,9 @@ add_executable(${LIGHT_YEARS_GAME_TARGET_NAME}
 
         src/Enemy/HexagonStage.cpp
         include/Enemy/HexagonStage.h
+
+        src/Enemy/UFO.cpp
+        include/Enemy/UFO.h
 )
 
 target_include_directories(${LIGHT_YEARS_GAME_TARGET_NAME} PUBLIC
