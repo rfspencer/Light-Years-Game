@@ -3,6 +3,7 @@
 #include "framework/MathUtility.h"
 #include "weapon/BulletShooter.h"
 #include "weapon/ThreeWayShooter.h"
+#include "weapon/FrontWiper.h"
 
 namespace ly
 {
@@ -11,7 +12,7 @@ namespace ly
         : SpaceShip(owningWorld, texturePath),
         mMoveInput{},
         mSpeed{200.f},
-        mShooter{new ThreeWayShooter{this, 0.1f, {50.f, 0.f}}}
+        mShooter{new FrontWiper{this, 0.1f, {50.f, 0.f}}}
     {
         SetTeamID(1);
     }

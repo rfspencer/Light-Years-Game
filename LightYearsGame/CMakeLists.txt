@@ -55,6 +55,9 @@ add_executable(${LIGHT_YEARS_GAME_TARGET_NAME}
 
         src/weapon/ThreeWayShooter.cpp
         include/weapon/ThreeWayShooter.h
+
+        src/weapon/FrontWiper.cpp
+        include/weapon/FrontWiper.h
 )
 
 target_include_directories(${LIGHT_YEARS_GAME_TARGET_NAME} PUBLIC
