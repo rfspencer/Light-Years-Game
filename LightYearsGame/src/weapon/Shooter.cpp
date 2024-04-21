@@ -3,7 +3,9 @@
 namespace ly
 {
     Shooter::Shooter(Actor *owner)
-        : mOwner{owner}
+        : mOwner{owner},
+        mCurrentLevel{1},
+        mMaxLevel{4}
     {
 
     }
@@ -14,6 +16,12 @@ namespace ly
         {
             ShootImplementation();
         }
+    }
+
+    void Shooter::IncrementLevel(int amount)
+    {
+        if (mCurrentLevel == mMaxLevel) return;
+        ++mCurrentLevel;
     }
 
 

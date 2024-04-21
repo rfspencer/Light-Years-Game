@@ -10,6 +10,8 @@ namespace ly
     public:
         FrontWiper(Actor* ownerActor, float cooldownTime = 0.3f, const sf::Vector2f& localOffset = {0.f, 0.f}, float width = 60.f);
 
+        void IncrementLevel(int amount = 1) override;
+
     private:
 
         void ShootImplementation() override;
@@ -20,5 +22,8 @@ namespace ly
         BulletShooter mShooter2;
         BulletShooter mShooter3;
         BulletShooter mShooter4;
+
+        BulletShooter mShooter5;
+        BulletShooter mShooter6;
     };
 }
