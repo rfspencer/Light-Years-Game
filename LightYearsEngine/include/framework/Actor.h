@@ -59,6 +59,8 @@ namespace ly
         sf::Sprite& GetSprite() { return mSprite; }
         const sf::Sprite& GetSprite() const { return mSprite; }
 
+        Delegate<Actor*> onActorDestroyed;
+
     private:
         void InitializePhysics();
         void UnInitializePhysics();
