@@ -61,6 +61,9 @@ add_executable(${LIGHT_YEARS_GAME_TARGET_NAME}
 
         src/player/Reward.cpp
         include/player/Reward.h
+
+        src/player/Player.cpp
+        include/player/Player.h
 )
 
 target_include_directories(${LIGHT_YEARS_GAME_TARGET_NAME} PUBLIC
