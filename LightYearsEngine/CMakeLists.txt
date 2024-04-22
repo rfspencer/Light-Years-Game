@@ -40,6 +40,9 @@ add_library(${LIGHT_YEARS_ENGINE_TARGET_NAME} STATIC
 
         src/gameplay/WaitStage.cpp
         include/gameplay/WaitStage.h
+
+        src/widgets/HUD.cpp
+        include/widgets/HUD.h
 )
 
 target_include_directories(${LIGHT_YEARS_ENGINE_TARGET_NAME} PUBLIC
