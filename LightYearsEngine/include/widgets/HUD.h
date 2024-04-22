@@ -9,17 +9,17 @@ namespace ly
     {
     public:
         virtual void Draw(sf::RenderWindow& windowRef) = 0;
-        void NativeInit(sf::RenderWindow& windowRef);
+        void NativeInit(const sf::RenderWindow& windowRef);
 
         bool HasInit() const { return mAlreadyInit; }
 
-        virtual bool HandleEvent(const::sf::Event& event);
+        virtual bool HandleEvent(const sf::Event& event);
 
     protected:
         HUD();
 
     private:
-        virtual void Init(sf::RenderWindow& windowRef);
+        virtual void Init(const sf::RenderWindow& windowRef);
 
         bool mAlreadyInit;
 
