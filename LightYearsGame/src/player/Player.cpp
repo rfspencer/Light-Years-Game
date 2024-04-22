@@ -25,11 +25,14 @@ namespace ly
             mCurrentPlayerSpaceShip.lock()->SetActorLocation(sf::Vector2f(windowSize.x / 2.f, windowSize.y - 100.f));
             mCurrentPlayerSpaceShip.lock()->SetActorRotation(0.f);
             onLifeChanged.Broadcast(mLifeCount);
+
+            return mCurrentPlayerSpaceShip;
         }
         else
         {
             onLifeExhausted.Broadcast();
         }
+        return weak<PlayerSpaceShip>{};
     }
 
     void Player::AddLifeCount(unsigned int count)
@@ -41,7 +44,7 @@ namespace ly
         }
     }
 
-    int Player::AddScore(unsigned int amount)
+    void Player::AddScore(unsigned int amount)
     {
         if (amount > 0 )
         {

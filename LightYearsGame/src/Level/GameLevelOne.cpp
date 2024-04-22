@@ -5,6 +5,7 @@
 #include "Enemy/VanguardStage.h"
 #include "gameplay/GameStage.h"
 #include "gameplay/WaitStage.h"
+#include "player/PlayerManager.h"
 #include "player/PlayerSpaceShip.h"
 #include "Enemy/TwinBladeStage.h"
 
@@ -15,13 +16,13 @@ namespace ly
     GameLevelOne::GameLevelOne(Application *owningApp)
         : World(owningApp)
     {
-        testPlayerSpaceship = SpawnActor<PlayerSpaceShip>();
-        testPlayerSpaceship.lock()->SetActorLocation(sf::Vector2f(300.f, 490.f));
-        testPlayerSpaceship.lock()->SetActorRotation(0.f);
+
     }
 
     void GameLevelOne::BeginPlay()
     {
+        Player newPlayer = PlayerManager::Get().CreateNewPlayer();
+        newPlayer.SpawnSpaceShip(this);
     }
 
     void GameLevelOne::InitGameStages()
