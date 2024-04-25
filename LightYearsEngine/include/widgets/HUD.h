@@ -15,6 +15,8 @@ namespace ly
 
         virtual bool HandleEvent(const sf::Event& event);
 
+        virtual void Tick(float deltaTime);
+
     protected:
         HUD();
 

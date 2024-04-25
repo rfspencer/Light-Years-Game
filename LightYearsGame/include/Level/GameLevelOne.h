@@ -6,6 +6,7 @@
 namespace ly
 {
     class PlayerSpaceShip;
+    class GameplayHUD;
 
     class GameLevelOne : public World
     {
@@ -17,6 +18,8 @@ namespace ly
 
         weak<PlayerSpaceShip> mPlayerSpaceShip;
         void PlayerSpaceShipDestroyed(Actor* destroyedPlayerSpaceShip);
+
+        weak<GameplayHUD> mGameplayHUD;
 
         TimerHandle timerHandle_Test;
 

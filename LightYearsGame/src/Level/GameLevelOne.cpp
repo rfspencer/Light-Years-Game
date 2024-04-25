@@ -3,11 +3,12 @@
 #include "Enemy/HexagonStage.h"
 #include "Enemy/UFOStage.h"
 #include "Enemy/VanguardStage.h"
+#include "Enemy/TwinBladeStage.h"
 #include "gameplay/GameStage.h"
 #include "gameplay/WaitStage.h"
 #include "player/PlayerManager.h"
 #include "player/PlayerSpaceShip.h"
-#include "Enemy/TwinBladeStage.h"
+#include "widgets/GameplayHUD.h"
 
 
 namespace ly
@@ -24,6 +25,7 @@ namespace ly
         Player newPlayer = PlayerManager::Get().CreateNewPlayer();
         mPlayerSpaceShip = newPlayer.SpawnSpaceShip(this);
         mPlayerSpaceShip.lock()->onActorDestroyed.BindAction(GetWeakRef(), &GameLevelOne::PlayerSpaceShipDestroyed);
+        mGameplayHUD = SpawnHUD<GameplayHUD>();
     }
 
     void GameLevelOne::PlayerSpaceShipDestroyed(Actor *destroyedPlayerSpaceShip)

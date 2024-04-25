@@ -67,6 +67,9 @@ add_executable(${LIGHT_YEARS_GAME_TARGET_NAME}
 
         src/player/PlayerManager.cpp
         include/player/PlayerManager.h
+
+        src/Widgets/GameplayHUD.cpp
+        include/Widgets/GameplayHUD.h
 )
 
 target_include_directories(${LIGHT_YEARS_GAME_TARGET_NAME} PUBLIC
