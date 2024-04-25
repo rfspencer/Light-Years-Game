@@ -43,6 +43,9 @@ add_library(${LIGHT_YEARS_ENGINE_TARGET_NAME} STATIC
 
         src/widgets/HUD.cpp
         include/widgets/HUD.h
+
+        src/widgets/Widget.cpp
+        include/widgets/Widget.h
 )
 
 target_include_directories(${LIGHT_YEARS_ENGINE_TARGET_NAME} PUBLIC
