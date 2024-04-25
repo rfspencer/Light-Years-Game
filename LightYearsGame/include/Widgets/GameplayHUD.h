@@ -2,6 +2,7 @@
 
 #include "widgets/HUD.h"
 #include "widgets/TextWidget.h"
+#include "widgets/ValueGauge.h"
 
 namespace ly
 {
@@ -14,7 +15,9 @@ namespace ly
         void Draw(sf::RenderWindow &windowRef) override;
 
     private:
-        TextWidget mFramerateText;
+        void Init(const sf::RenderWindow &windowRef) override;
 
+        TextWidget mFramerateText;
+        ValueGauge mPlayerHealthBar;
     };
 }
