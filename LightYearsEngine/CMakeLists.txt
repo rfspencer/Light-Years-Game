@@ -46,6 +46,9 @@ add_library(${LIGHT_YEARS_ENGINE_TARGET_NAME} STATIC
 
         src/widgets/Widget.cpp
         include/widgets/Widget.h
+
+        src/widgets/TextWidget.cpp
+        include/widgets/TextWidget.h
 )
 
 target_include_directories(${LIGHT_YEARS_ENGINE_TARGET_NAME} PUBLIC
