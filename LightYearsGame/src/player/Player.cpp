@@ -30,6 +30,7 @@ namespace ly
         }
         else
         {
+            mCurrentPlayerSpaceShip = weak<PlayerSpaceShip>{};
             onLifeExhausted.Broadcast();
         }
         return weak<PlayerSpaceShip>{};

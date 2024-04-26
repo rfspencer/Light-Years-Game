@@ -22,7 +22,7 @@ namespace ly
 
     void GameLevelOne::BeginPlay()
     {
-        Player newPlayer = PlayerManager::Get().CreateNewPlayer();
+        Player& newPlayer = PlayerManager::Get().CreateNewPlayer();
         mPlayerSpaceShip = newPlayer.SpawnSpaceShip(this);
         mPlayerSpaceShip.lock()->onActorDestroyed.BindAction(GetWeakRef(), &GameLevelOne::PlayerSpaceShipDestroyed);
         mGameplayHUD = SpawnHUD<GameplayHUD>();

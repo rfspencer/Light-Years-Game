@@ -19,6 +19,7 @@ namespace ly
 
     void ValueGauge::UpdateValue(float value, float maxValue)
     {
+        LY_LOG("player health is now: %f", value);
         if (maxValue == 0) return;
 
         mPercent = value / maxValue;
