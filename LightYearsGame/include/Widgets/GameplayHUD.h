@@ -3,6 +3,7 @@
 #include "widgets/HUD.h"
 #include "widgets/TextWidget.h"
 #include "widgets/ValueGauge.h"
+#include "widgets/ImageWidget.h"
 
 namespace ly
 {
@@ -24,9 +25,12 @@ namespace ly
 
         TextWidget mFramerateText;
         ValueGauge mPlayerHealthBar;
+        ImageWidget mPlayerLifeIcon;
 
         sf::Color mHealthBarColor;
         sf::Color mCriticalBarColor;
         float mCriticalThreshold;
+
+        float mWidgetSpacing;
     };
 }

@@ -52,6 +52,9 @@ add_library(${LIGHT_YEARS_ENGINE_TARGET_NAME} STATIC
 
         src/widgets/ValueGauge.cpp
         include/widgets/ValueGauge.h
+
+        src/widgets/ImageWidget.cpp
+        include/widgets/ImageWidget.h
 )
 
 target_include_directories(${LIGHT_YEARS_ENGINE_TARGET_NAME} PUBLIC
