@@ -10,7 +10,10 @@ namespace ly
 
     GameplayHUD::GameplayHUD()
         : mFramerateText{"Frame rate: "},
-          mPlayerHealthBar{}
+          mPlayerHealthBar{},
+          mHealthBarColor{128, 255, 128, 255},
+          mCriticalBarColor{255, 0 ,0, 255},
+          mCriticalThreshold{0.3}
     {
         mFramerateText.SetTextSize(15);
     }
@@ -54,6 +57,14 @@ namespace ly
     void GameplayHUD::PlayerHealthUpdated(float amount, float currentHealth, float maxHealth)
     {
         mPlayerHealthBar.UpdateValue(currentHealth, maxHealth);
+        if(currentHealth / maxHealth <= mCriticalThreshold)
+        {
+            mPlayerHealthBar.SetForegroundColor(mCriticalBarColor);
+        }
+        else
+        {
+            mPlayerHealthBar.SetForegroundColor(mHealthBarColor);
+        }
     }
 
     void GameplayHUD::PlayerSpaceshipDestroyed(Actor *actor)

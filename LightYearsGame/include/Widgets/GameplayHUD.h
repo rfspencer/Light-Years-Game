@@ -25,5 +25,8 @@ namespace ly
         TextWidget mFramerateText;
         ValueGauge mPlayerHealthBar;
 
+        sf::Color mHealthBarColor;
+        sf::Color mCriticalBarColor;
+        float mCriticalThreshold;
     };
 }

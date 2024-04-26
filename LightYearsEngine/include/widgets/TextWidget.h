@@ -13,7 +13,7 @@ namespace ly
 
         void SetString(const std::string& newStr);
         void SetTextSize(unsigned int newSize);
-
+        sf::FloatRect GetBound() const override;
 
     private:
         void LocationUpdated(const sf::Vector2f& newLocation) override;
