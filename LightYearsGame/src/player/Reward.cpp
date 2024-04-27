@@ -1,5 +1,6 @@
 #include "player/Reward.h"
 #include "player/PlayerSpaceShip.h"
+#include "player/PlayerManager.h"
 #include "weapon/ThreeWayShooter.h"
 #include "weapon/FrontWiper.h"
 #include "framework/World.h"
@@ -31,12 +32,15 @@ namespace ly
 
     void Reward::OnActorBeginOverlap(ly::Actor *otherActor)
     {
-        // TODO: clean up casting.
-        PlayerSpaceShip* playerSpaceShip = dynamic_cast<PlayerSpaceShip*>(otherActor);
+        if (!otherActor || otherActor->IsPendingDestroy()) return;
+        if (!PlayerManager::Get().GetPlayer()) return;
 
-        if (playerSpaceShip != nullptr && !playerSpaceShip->IsPendingDestroy())
+        weak<PlayerSpaceShip> playerSpaceShip = PlayerManager::Get().GetPlayer()->GetCurrentSpaceShip();
+        if (playerSpaceShip.expired() || playerSpaceShip.lock()->IsPendingDestroy()) return;
+
+        if(playerSpaceShip.lock()->GetUniqueID() == otherActor->GetUniqueID())
         {
-            mRewardFunction(playerSpaceShip);
+            mRewardFunction(playerSpaceShip.lock().get());
             Destroy();
         }
     }
