@@ -70,6 +70,12 @@ add_executable(${LIGHT_YEARS_GAME_TARGET_NAME}
 
         src/Widgets/GameplayHUD.cpp
         include/Widgets/GameplayHUD.h
+
+        src/Level/MainMenuLevel.cpp
+        include/Level/MainMenuLevel.h
+
+        src/Widgets/MainMenuHUD.cpp
+        include/Widgets/MainMenuHUD.h
 )
 
 target_include_directories(${LIGHT_YEARS_GAME_TARGET_NAME} PUBLIC

@@ -11,7 +11,7 @@ namespace ly
         Button(const std::string& textSTring = "Button", const std::string& buttonTexturePath = "SpaceShooterRedux/PNG/UI/buttonBlue.png");
         sf::FloatRect GetBound() const override;
         void SetTextString(const std::string& newString);
-        void SetTextCharacterSize(unsigned int characterSize);
+        void SetTextSize(unsigned int characterSize);
 
         bool HandleEvent(const sf::Event& windowEvent) override;
         Delegate<> onButtonClicked;
