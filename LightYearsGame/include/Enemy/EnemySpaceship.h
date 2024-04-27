@@ -21,9 +21,12 @@ namespace ly
                        );
 
         virtual void Tick(float deltaTime) override;
+        void SetScoreAwardAmount(unsigned int amount);
+
     private:
         void SpawnReward();
         float mCollisionDamage;
+        unsigned int mScoreAwardAmount;
         virtual void OnActorBeginOverlap(Actor* other) override;
         void BlewUp() override;
 
