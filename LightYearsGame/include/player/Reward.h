@@ -28,8 +28,10 @@ namespace ly
     weak<Reward> CreateHealthReward(World* world);
     weak<Reward> CreateThreeWayShooterReward(World* world);
     weak<Reward> CreateFrontWiperReward(World* world);
+    weak<Reward> CreateLifeReward(World* world);
 
     void RewardHealth(PlayerSpaceShip* player);
     void RewardThreeWayShooter(PlayerSpaceShip* player);
     void RewardFrontWiper(PlayerSpaceShip* player);
+    void RewardLife(PlayerSpaceShip* player);
 }

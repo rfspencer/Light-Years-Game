@@ -6,8 +6,8 @@
 namespace ly
 {
 
-    EnemySpaceship::EnemySpaceship(World *owningWorld, const std::string &texturePath, float collisionDamage,const List<RewardFactoryFunction> rewards)
-        : SpaceShip{owningWorld, texturePath}, mCollisionDamage{collisionDamage}, mRewardFactories{rewards}, mScoreAwardAmount{10}
+    EnemySpaceship::EnemySpaceship(World *owningWorld, const std::string &texturePath, float collisionDamage, float rewardSpawnWeight, const List<RewardFactoryFunction> rewards)
+        : SpaceShip{owningWorld, texturePath}, mCollisionDamage{collisionDamage}, mRewardFactories{rewards}, mScoreAwardAmount{10}, mRewardSpawnWeight{rewardSpawnWeight}
     {
         SetTeamID(2);
     }
@@ -30,6 +30,8 @@ namespace ly
     void EnemySpaceship::SpawnReward()
     {
         if (mRewardFactories.size() == 0) return;
+
+        if (mRewardSpawnWeight < RandomRange(0, 1)) return;
 
         int pick = (int)RandomRange(0, mRewardFactories.size());
         if (pick >= 0 && pick < mRewardFactories.size())
