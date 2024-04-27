@@ -76,6 +76,9 @@ add_executable(${LIGHT_YEARS_GAME_TARGET_NAME}
 
         src/Widgets/MainMenuHUD.cpp
         include/Widgets/MainMenuHUD.h
+
+        src/Enemy/ChaosStage.cpp
+        include/Enemy/ChaosStage.h
 )
 
 target_include_directories(${LIGHT_YEARS_GAME_TARGET_NAME} PUBLIC
