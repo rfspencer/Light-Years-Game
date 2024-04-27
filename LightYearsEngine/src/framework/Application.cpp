@@ -28,7 +28,7 @@ namespace ly
             {
                 if(windowEvent.type == sf::Event::EventType::Closed)
                 {
-                    mWindow.close();
+                    QuitApplication();
                 }
                 else
                 {
@@ -83,6 +83,12 @@ namespace ly
                 mCurrentWorld->CleanCycle();
             }
         }
+
+        if (mPendingWorld && mPendingWorld != mCurrentWorld)
+        {
+            mCurrentWorld = mPendingWorld;
+            mCurrentWorld->BeginPlayInternal();
+        }
     }
 
     void Application::RenderInternal()
@@ -102,5 +108,10 @@ namespace ly
     void Application::Tick(float deltaTime)
     {
 
+    }
+
+    void Application::QuitApplication()
+    {
+        mWindow.close();
     }
 }

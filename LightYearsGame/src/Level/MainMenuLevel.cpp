@@ -1,5 +1,7 @@
 #include "Level/MainMenuLevel.h"
 #include "widgets/MainMenuHUD.h"
+#include "framework/Application.h"
+#include "Level/GameLevelOne.h"
 
 namespace ly
 {
@@ -18,11 +20,11 @@ namespace ly
 
     void MainMenuLevel::StartGame()
     {
-        LY_LOG("Starting game");
+        GetApplication()->LoadWorld<GameLevelOne>();
     }
 
     void MainMenuLevel::QuitGame()
     {
-        LY_LOG("Quiting game");
+        GetApplication()->QuitApplication();
     }
 }
