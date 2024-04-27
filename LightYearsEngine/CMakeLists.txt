@@ -55,6 +55,9 @@ add_library(${LIGHT_YEARS_ENGINE_TARGET_NAME} STATIC
 
         src/widgets/ImageWidget.cpp
         include/widgets/ImageWidget.h
+
+        src/widgets/Button.cpp
+        include/widgets/Button.h
 )
 
 target_include_directories(${LIGHT_YEARS_ENGINE_TARGET_NAME} PUBLIC

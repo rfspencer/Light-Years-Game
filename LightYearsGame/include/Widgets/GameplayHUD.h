@@ -4,6 +4,7 @@
 #include "widgets/TextWidget.h"
 #include "widgets/ValueGauge.h"
 #include "widgets/ImageWidget.h"
+#include "widgets/Button.h"
 
 namespace ly
 {
@@ -32,6 +33,9 @@ namespace ly
         TextWidget mPlayerLifeText;
         ImageWidget mPlayerScoreIcon;
         TextWidget mPlayerScoreText;
+
+        // TODO: remove, testing only
+        Button TestButton;
 
         sf::Color mHealthBarColor;
         sf::Color mCriticalBarColor;

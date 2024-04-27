@@ -18,7 +18,8 @@ namespace ly
           mHealthBarColor{128, 255, 128, 255},
           mCriticalBarColor{255, 0 ,0, 255},
           mCriticalThreshold{0.3},
-          mWidgetSpacing{10.f}
+          mWidgetSpacing{10.f},
+          TestButton{}
     {
         mFramerateText.SetTextSize(15);
         mPlayerLifeText.SetTextSize(20);
@@ -42,6 +43,7 @@ namespace ly
         mPlayerLifeText.NativeDraw(windowRef);
         mPlayerScoreIcon.NativeDraw(windowRef);
         mPlayerScoreText.NativeDraw(windowRef);
+        TestButton.NativeDraw(windowRef);
     }
 
     void GameplayHUD::Init(const sf::RenderWindow &windowRef)
@@ -62,6 +64,8 @@ namespace ly
 
         nextWidgetPosition += sf::Vector2f{mPlayerScoreIcon.GetBound().width + mWidgetSpacing, 0.f};
         mPlayerScoreText.SetWidgetLocation(nextWidgetPosition);
+
+        TestButton.SetWidgetLocation({windowSize.x / 2.f, windowSize.y / 2.f});
 
         RefreshHealthBar();
         ConnectPlayerStatus();
