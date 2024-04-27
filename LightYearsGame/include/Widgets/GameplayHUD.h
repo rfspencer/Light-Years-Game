@@ -17,6 +17,7 @@ namespace ly
 
         void Tick(float deltaTime) override;
         void Draw(sf::RenderWindow &windowRef) override;
+        bool HandleEvent(const sf::Event &event) override;
 
     private:
         void Init(const sf::RenderWindow &windowRef) override;
@@ -36,6 +37,7 @@ namespace ly
 
         // TODO: remove, testing only
         Button TestButton;
+        void TestButtonClick();
 
         sf::Color mHealthBarColor;
         sf::Color mCriticalBarColor;

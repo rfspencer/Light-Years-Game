@@ -19,9 +19,9 @@ namespace ly
         }
     }
 
-    void Widget::HandleEvent(const sf::Event &event)
+    bool Widget::HandleEvent(const sf::Event &windowEvent)
     {
-
+        return false;
     }
 
     void Widget::SetWidgetLocation(const sf::Vector2f &newLocation)

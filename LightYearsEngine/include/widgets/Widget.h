@@ -9,7 +9,7 @@ namespace ly
     {
     public:
         void NativeDraw(sf::RenderWindow& widowRef);
-        virtual void HandleEvent(const sf::Event& event);
+        virtual bool HandleEvent(const sf::Event& windowEvent);
         void SetWidgetLocation(const sf::Vector2f& newLocation);
         void SetWidgetRotation(float newRotation);
         sf::Vector2f GetWidgetLocation() const { return mWidgetTransform.getPosition(); }

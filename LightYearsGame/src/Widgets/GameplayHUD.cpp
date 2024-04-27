@@ -46,6 +46,11 @@ namespace ly
         TestButton.NativeDraw(windowRef);
     }
 
+    bool GameplayHUD::HandleEvent(const sf::Event &event)
+    {
+        return TestButton.HandleEvent(event) || HUD::HandleEvent(event);
+    }
+
     void GameplayHUD::Init(const sf::RenderWindow &windowRef)
     {
         auto windowSize = windowRef.getSize();
@@ -66,6 +71,8 @@ namespace ly
         mPlayerScoreText.SetWidgetLocation(nextWidgetPosition);
 
         TestButton.SetWidgetLocation({windowSize.x / 2.f, windowSize.y / 2.f});
+        TestButton.SetTextCharacterSize(20);
+        TestButton.onButtonClicked.BindAction(GetWeakRef(), &GameplayHUD::TestButtonClick);
 
         RefreshHealthBar();
         ConnectPlayerStatus();
@@ -125,5 +132,10 @@ namespace ly
     void GameplayHUD::PlayerSpaceshipDestroyed(Actor *actor)
     {
         RefreshHealthBar();
+    }
+
+    void GameplayHUD::TestButtonClick()
+    {
+        LY_LOG("Button clicked");
     }
 }
