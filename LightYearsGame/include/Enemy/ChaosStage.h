@@ -16,14 +16,14 @@ class ChaosStage : public GameStage
     private:
         void StageFinished() override;
         void SpawnVanguard();
-        void SpawnTwinShooter();
+        void SpawnTwinBlade();
         void SpawnHexagon();
         void SpawnUFO();
 
-        void InreaseDifficulty();
+        void IncreaseDifficulty();
         void StageDurationReached();
 
-        sf::Vector2f GetRandomSpawnLocation() const;
+        sf::Vector2f GetRandomSpawnLocationTop() const;
         sf::Vector2f GetRandomSpawnLocationSide() const;
 
         float mSpawnInterval;
