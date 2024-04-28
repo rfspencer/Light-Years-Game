@@ -5,13 +5,13 @@
 namespace ly
 {
 
-    ThreeWayShooter::ThreeWayShooter(Actor *owner, float cooldownTime, const sf::Vector2f &localOffset)
+    ThreeWayShooter::ThreeWayShooter(Actor *owner, float cooldownTime, const sf::Vector2f &localOffset, float localRotationOffset)
         : Shooter(owner),
-        mShooterLeft{owner, cooldownTime, localOffset + sf::Vector2f{10.f, -10.f}, -30.f, "SpaceShooterRedux/PNG/Lasers/laserRed01.png"},
-        mShooterMid{owner, cooldownTime, localOffset, 0.f, "SpaceShooterRedux/PNG/Lasers/laserRed01.png"},
-        mShooterRight{owner, cooldownTime, localOffset + sf::Vector2f{10.f, 10.f}, 30.f, "SpaceShooterRedux/PNG/Lasers/laserRed01.png"},
-        mTopShooterLeft{owner, cooldownTime, localOffset + sf::Vector2f{10.f, -10.f}, -15.f, "SpaceShooterRedux/PNG/Lasers/laserRed01.png"},
-        mTopShooterRight{owner, cooldownTime, localOffset + sf::Vector2f{10.f, 10.f}, 15.f, "SpaceShooterRedux/PNG/Lasers/laserRed01.png"}
+        mShooterLeft{owner, cooldownTime, localOffset + sf::Vector2f{10.f, -10.f}, -30.f + localRotationOffset, "SpaceShooterRedux/PNG/Lasers/laserRed01.png"},
+        mShooterMid{owner, cooldownTime, localOffset, 0.f + localRotationOffset, "SpaceShooterRedux/PNG/Lasers/laserRed01.png"},
+        mShooterRight{owner, cooldownTime, localOffset + sf::Vector2f{10.f, 10.f}, 30.f + localRotationOffset, "SpaceShooterRedux/PNG/Lasers/laserRed01.png"},
+        mTopShooterLeft{owner, cooldownTime, localOffset + sf::Vector2f{10.f, -10.f}, -15.f + localRotationOffset, "SpaceShooterRedux/PNG/Lasers/laserRed01.png"},
+        mTopShooterRight{owner, cooldownTime, localOffset + sf::Vector2f{10.f, 10.f}, 15.f + localRotationOffset, "SpaceShooterRedux/PNG/Lasers/laserRed01.png"}
     {
 
     }
@@ -26,6 +26,18 @@ namespace ly
 
         mTopShooterLeft.IncrementLevel(amount);
         mTopShooterRight.IncrementLevel(amount);
+    }
+
+    void ThreeWayShooter::SetCurrentLevel(int newLevel)
+    {
+        Shooter::SetCurrentLevel(newLevel);
+
+        mShooterLeft.SetCurrentLevel(newLevel);
+        mShooterRight.SetCurrentLevel(newLevel);
+        mShooterMid.SetCurrentLevel(newLevel);
+
+        mTopShooterLeft.SetCurrentLevel(newLevel);
+        mTopShooterRight.SetCurrentLevel(newLevel);
     }
 
     void ThreeWayShooter::ShootImplementation()

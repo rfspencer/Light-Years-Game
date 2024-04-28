@@ -12,6 +12,7 @@ namespace ly
     public:
         Boss(World* world);
         void Tick(float deltaTime) override;
+        void BeginPlay() override;
 
     private:
         float mSpeed;
@@ -20,6 +21,20 @@ namespace ly
 
         BulletShooter mBaseShooterLeft;
         BulletShooter mBaseShooterRight;
+
+        ThreeWayShooter mThreeWayShooter;
+        FrontWiper mFrontalWiperLeft;
+        FrontWiper mFrontalWiperRight;
+
+        BulletShooter mFinalStageShooterLeft;
+        BulletShooter mFinalStageShooterRight;
+
         void ShootBaseShooters();
+        void ShootThreeWayShooter();
+        void ShootFrontalWipers();
+        void HealthChanged(float amount, float currentHealth, float maxHealth);
+
+        void SetStage(int newStage);
+        int mStage;
     };
 }

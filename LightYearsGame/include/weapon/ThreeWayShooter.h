@@ -10,7 +10,7 @@ namespace ly
     class ThreeWayShooter : public Shooter
     {
     public:
-        ThreeWayShooter(Actor* owner, float cooldownTime = 0.1f, const sf::Vector2f& localOffset = {0.f, 0.f});
+        ThreeWayShooter(Actor* owner, float cooldownTime = 0.1f, const sf::Vector2f& localOffset = {0.f, 0.f}, float localRotationOffset = 0.f);
 
         BulletShooter mShooterLeft;
         BulletShooter mShooterMid;
@@ -20,6 +20,7 @@ namespace ly
         BulletShooter mTopShooterRight;
 
         void IncrementLevel(int amount = 1) override;
+        void SetCurrentLevel(int newLevel) override;
 
     private:
 
