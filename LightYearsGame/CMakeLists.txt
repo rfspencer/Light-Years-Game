@@ -79,6 +79,12 @@ add_executable(${LIGHT_YEARS_GAME_TARGET_NAME}
 
         src/Enemy/ChaosStage.cpp
         include/Enemy/ChaosStage.h
+
+        src/Enemy/Boss.cpp
+        include/Enemy/Boss.h
+        src/Enemy/BossStage.cpp
+
+        include/Enemy/BossStage.h
 )
 
 target_include_directories(${LIGHT_YEARS_GAME_TARGET_NAME} PUBLIC
