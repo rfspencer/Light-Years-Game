@@ -41,6 +41,12 @@ namespace ly
         }
     }
 
+    void HealthComponent::SetInitialHealth(float health, float maxHealth)
+    {
+        mHealth = health;
+        mMaxHealth = maxHealth;
+    }
+
     void HealthComponent::TakeDamage(float damageAmount)
     {
         onTakenDamage.Broadcast(damageAmount, mHealth, mMaxHealth);
