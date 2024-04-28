@@ -58,6 +58,9 @@ add_library(${LIGHT_YEARS_ENGINE_TARGET_NAME} STATIC
 
         src/widgets/Button.cpp
         include/widgets/Button.h
+
+        src/framework/BackdropActor.cpp
+        include/framework/BackdropActor.h
 )
 
 target_include_directories(${LIGHT_YEARS_ENGINE_TARGET_NAME} PUBLIC

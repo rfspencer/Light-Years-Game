@@ -12,6 +12,7 @@
 #include "widgets/GameplayHUD.h"
 #include "Enemy/BossStage.h"
 #include "framework/Application.h"
+#include "framework/BackdropActor.h"
 
 
 namespace ly
@@ -25,6 +26,8 @@ namespace ly
 
     void GameLevelOne::BeginPlay()
     {
+        SpawnCosmetics();
+
         Player& newPlayer = PlayerManager::Get().CreateNewPlayer();
         mPlayerSpaceShip = newPlayer.SpawnSpaceShip(this);
         mPlayerSpaceShip.lock()->onActorDestroyed.BindAction(GetWeakRef(), &GameLevelOne::PlayerSpaceShipDestroyed);
@@ -65,6 +68,11 @@ namespace ly
 
         AddStage(shared<WaitStage>{new WaitStage{this, 10.f}});
         AddStage(shared<BossStage>{new BossStage{this}});
+    }
+
+    void GameLevelOne::SpawnCosmetics()
+    {
+        auto backdropActor = SpawnActor<BackdropActor>("SpaceShooterRedux/Backgrounds/darkPurple.png");
     }
 
     void GameLevelOne::GameOver()

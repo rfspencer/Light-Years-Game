@@ -27,6 +27,8 @@ namespace ly
 
         virtual void InitGameStages() override;
 
+        void SpawnCosmetics();
+
         virtual void GameOver();
 
         void QuitGame();

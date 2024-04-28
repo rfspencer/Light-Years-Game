@@ -61,6 +61,8 @@ namespace ly
 
         Delegate<Actor*> onActorDestroyed;
 
+        void SetTextureRepeated(bool repeated);
+
     private:
         void InitializePhysics();
         void UnInitializePhysics();
