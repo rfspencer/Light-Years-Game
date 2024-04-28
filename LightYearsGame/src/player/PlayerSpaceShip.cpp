@@ -12,7 +12,12 @@ namespace ly
         : SpaceShip(owningWorld, texturePath),
         mMoveInput{},
         mSpeed{200.f},
-        mShooter{new BulletShooter{this, 0.1f, {50.f, 0.f}}}
+        mShooter{new BulletShooter{this, 0.1f, {50.f, 0.f}}},
+        mInvulnerableTime{2.f},
+        mInvulnerable{true},
+        mInvulnerableFlashInterval{0.5f},
+        mInvulnerableFlashTimer{0.f},
+        mInvulnerableFlashDuration{1.f}
     {
         SetTeamID(1);
     }
@@ -23,6 +28,7 @@ namespace ly
 
         HandleInput();
         ConsumeInput(deltaTime);
+        UpdateInvulnerable(deltaTime);
     }
 
     void PlayerSpaceShip::HandleInput()
@@ -102,5 +108,39 @@ namespace ly
             return;
         }
         mShooter = std::move(newShooter);
+    }
+
+    void PlayerSpaceShip::ApplyDamage(float amount)
+    {
+        if (!mInvulnerable)
+        {
+            SpaceShip::ApplyDamage(amount);
+        }
+    }
+
+    void PlayerSpaceShip::BeginPlay()
+    {
+        SpaceShip::BeginPlay();
+
+        TimerManager::Get().SetTimer(GetWeakRef(), &PlayerSpaceShip::StopInvulnerable, mInvulnerableTime);
+    }
+
+    void PlayerSpaceShip::StopInvulnerable()
+    {
+        GetSprite().setColor({255,255,255,255});
+        mInvulnerable = false;
+    }
+
+    void PlayerSpaceShip::UpdateInvulnerable(float deltaTime)
+    {
+        if (!mInvulnerable) return;
+
+        mInvulnerableFlashTimer += deltaTime * mInvulnerableFlashDuration;
+        if (mInvulnerableFlashTimer < 0 || mInvulnerableFlashTimer > mInvulnerableFlashInterval)
+        {
+            mInvulnerableFlashDuration *= -1;
+        }
+
+        GetSprite().setColor(LerpColor({255, 255, 255, 64}, {255, 255, 255, 128}, mInvulnerableFlashTimer / mInvulnerableFlashInterval));
     }
 }
