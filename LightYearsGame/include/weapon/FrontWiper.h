@@ -8,7 +8,7 @@ namespace ly
     class FrontWiper : public Shooter
     {
     public:
-        FrontWiper(Actor* ownerActor, float cooldownTime = 0.3f, const sf::Vector2f& localOffset = {0.f, 0.f}, float width = 60.f);
+        FrontWiper(Actor* ownerActor, float cooldownTime = 0.3f, const sf::Vector2f& localOffset = {0.f, 0.f}, float localRotationOffset = 0.f, float width = 60.f);
 
         void IncrementLevel(int amount = 1) override;
         void SetCurrentLevel(int newLevel) override;
