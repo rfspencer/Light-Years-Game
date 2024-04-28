@@ -61,6 +61,9 @@ add_library(${LIGHT_YEARS_ENGINE_TARGET_NAME} STATIC
 
         src/framework/BackdropActor.cpp
         include/framework/BackdropActor.h
+
+        src/framework/BackgroundLayer.cpp
+        include/framework/BackgroundLayer.h
 )
 
 target_include_directories(${LIGHT_YEARS_ENGINE_TARGET_NAME} PUBLIC
