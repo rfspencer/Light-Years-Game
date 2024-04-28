@@ -41,5 +41,10 @@ namespace ly
         }
         return *mPlayerManager;
     }
+
+    void PlayerManager::ResetPlayer()
+    {
+        mPlayers.clear();
+    }
 }
 

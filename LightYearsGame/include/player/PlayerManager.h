@@ -14,6 +14,7 @@ namespace ly
         const Player* GetPlayer(int playerIndex = 0) const;
 
         static PlayerManager& Get();
+        void ResetPlayer();
 
     protected:
         PlayerManager();
