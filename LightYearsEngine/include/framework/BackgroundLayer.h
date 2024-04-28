@@ -19,9 +19,14 @@ namespace ly
                         const sf::Color& colorTint = sf::Color{180, 180, 200, 225}
                         );
 
+        void Tick(float deltaTime) override;
+        void Render(sf::RenderWindow &window) override;
+
         void SetAssets(const List<std::string>& assetPaths);
         void SetColorTint(const sf::Color& color);
         void SetSpriteCount(int newCount);
+        void SetVelocities(const sf::Vector2f& min, const sf::Vector2f& max);
+        void SetSizes(float min, float max);
 
     private:
         void RefreshSprites();
@@ -30,6 +35,7 @@ namespace ly
         void RandomSpritePosition(sf::Sprite& sprite, bool randomY);
         void RandomSpriteRotation(sf::Sprite& sprite);
         void RandomSpriteSize(sf::Sprite& sprite);
+        bool IsSpriteOffScreen(sf::Sprite& sprite);
         shared<sf::Texture> GetRandomTexture() const;
 
         sf::Vector2f mMinVelocity;

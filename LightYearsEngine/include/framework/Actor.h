@@ -23,7 +23,7 @@ namespace ly
         virtual void Tick(float deltaTime);
 
         virtual void SetTexture(const std::string& texturePath);
-        void Render(sf::RenderWindow& window);
+        virtual void Render(sf::RenderWindow& window);
 
         void SetActorLocation(const sf::Vector2f& newLocation);
         void SetActorRotation(float newRotation);
