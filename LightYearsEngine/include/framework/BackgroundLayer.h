@@ -11,8 +11,8 @@ namespace ly
     public:
         BackgroundLayer(World* owningWorld,
                         const List<std::string>& assetPaths = {},
-                        const sf::Vector2f& minVel = sf::Vector2f{0.f, -50.f},
-                        const sf::Vector2f& maxVel = sf::Vector2f{0.f, -200.f},
+                        const sf::Vector2f& minVel = sf::Vector2f{0.f, 50.f},
+                        const sf::Vector2f& maxVel = sf::Vector2f{0.f, 200.f},
                         float sizeMin = 1.f,
                         float sizeMax = 2.f,
                         int spriteCount = 20,
