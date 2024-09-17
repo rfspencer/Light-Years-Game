@@ -6,6 +6,6 @@ std::string GetResourceDir()
 #ifdef NDEBUG // Release build
     return "assets/";
 #else
-    return "D:/git/Cpp-Game-from-Scratch/LightYearsGame/assets/";
+    return "D:/git/Light-Years-Game/LightYearsGame/assets/";
 #endif
 }
