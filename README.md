@@ -16,7 +16,7 @@ You can use [Git for Windows](https://git-for-windows.github.io/) to clone the r
 
 ## Dependencies
 - The latest version of [CMake](https://cmake.org/) (3.27 or greater)
-- Ninja build system
+- [Ninja](https://ninja-build.org/) build system
 - Libraries will download with CMake
 
 ### Windows Dependencies
